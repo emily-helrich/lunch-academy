@@ -24,3 +24,5 @@
 
 # Ignore coverall
 /coverage
+
+.env
