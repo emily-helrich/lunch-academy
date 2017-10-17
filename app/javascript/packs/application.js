@@ -11,9 +11,20 @@ console.log('Hello World from Webpacker');
 
 import React from 'react';
 import { render } from 'react-dom';
-import SampleComponent from '../../../frontend/components/SandwichTestComponent';
+import SandwichContainer from '../components/SandwichContainer';
+
+// document.addEventListener('DOMContentLoaded', () => {
+//   const container = document.body.appendChild(document.createElement('div'));
+//   render(<SampleComponent/>, container);
+// });
 
 document.addEventListener('DOMContentLoaded', () => {
-  const container = document.body.appendChild(document.createElement('div'));
-  render(<SampleComponent/>, container);
+  let reactElement = document.getElementById('app');
+
+  if (reactElement) {
+    render(
+      <SandwichContainer />,
+      reactElement
+    );
+  }
 });
