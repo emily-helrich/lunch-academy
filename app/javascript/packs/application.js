@@ -8,3 +8,12 @@
 // layout file, like app/views/layouts/application.html.erb
 
 console.log('Hello World from Webpacker')
+
+import React from 'react';
+import { render } from 'react-dom';
+import SampleComponent from '../components/SandwichTestComponent';
+
+document.addEventListener('DOMContentLoaded', () => {
+  const container = document.body.appendChild(document.createElement('div'));
+  render(<SampleComponent/>, container);
+});
