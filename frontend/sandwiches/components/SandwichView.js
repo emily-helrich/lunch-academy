@@ -4,25 +4,25 @@ class SandwichView extends Component {
   constructor(props) {
     super(props);
     this.state = {
-
+      sandwichData: {}
     };
   }
 
-  // componentWillMount() {
-  //   fetch('/api/v1/media.json', {
-  //     credentials: 'same-origin',
-  //     method: 'GET',
-  //     headers: { 'Content-Type': 'application/json' }
-  //   })
-  //   .then(response => { return response.json() })
-  //   .then(data => { this.setState({ media: data.media }) })
-  // }
+  componentWillMount() {
+    fetch('/api/v1/sandwiches.json', {
+      credentials: 'same-origin',
+      method: 'GET',
+      headers: { 'Content-Type': 'application/json' }
+    })
+    .then(response => { return response.json() })
+    .then(data => { this.setState({ media: data.media }) })
+  }
 
   render() {
 
     return(
       <div className="heading">
-        <h1>Helllloo from SandwichView react component</h1>
+
       </div>
     );
   }
