@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class SandwichContainer extends Component {
+class SandwichView extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -22,10 +22,10 @@ class SandwichContainer extends Component {
 
     return(
       <div className="heading">
-        <h1>Helllloo from SandwichContainer react component</h1>
+        <h1>Helllloo from SandwichView react component</h1>
       </div>
     );
   }
 }
 
-export default SandwichContainer;
+export default SandwichView;
