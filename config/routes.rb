@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
-  root "sandwiches#index"
+  devise_for :users
+  root to: "sandwiches#index"
   resources :sandwiches
+
+  namespace :api do
+    namespace :v1 do
+        resources :sandwiches, only: [:index, :show]
+    end
+  end
+
 end

@@ -7,7 +7,9 @@ end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
-# Rails
+gem 'webpacker', '~> 3.0'
+gem 'foreman'
+gem "active_model_serializers"
 gem 'foundation-rails'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.18'
@@ -19,6 +21,8 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
+
+gem 'devise'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
