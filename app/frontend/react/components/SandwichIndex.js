@@ -26,7 +26,7 @@ class SandwichIndex extends Component {
   render() {
     let sandwiches = this.state.sandwichData.map((sandwich) => {
       return(
-        <div>
+        <div className="sandwich-tile">
           <h3>{sandwich.name}</h3>
           <h3>{sandwich.description}</h3>
           <h3>{sandwich.image_url}</h3>
@@ -35,7 +35,7 @@ class SandwichIndex extends Component {
       );
     });
     return(
-      <div className="heading">
+      <div>
         {sandwiches}
       </div>
     );

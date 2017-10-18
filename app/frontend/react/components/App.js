@@ -3,14 +3,14 @@ import {
   BrowserRouter as Router,
   Route
 } from 'react-router-dom';
-import SandwichView from './SandwichView';
+import SandwichIndex from './SandwichIndex';
 
 const App = (props) => (
   <Router>
     <div>
       <Route
         path='/'
-        component={SandwichView}
+        component={SandwichIndex}
       />
     </div>
   </Router>
