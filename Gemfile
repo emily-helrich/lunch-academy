@@ -10,7 +10,7 @@ end
 gem 'rails', '~> 5.1.4'
 gem 'webpacker', '~> 3.0'
 gem 'foreman'
-# Rails
+gem "active_model_serializers"
 gem 'foundation-rails'
 
 # Use postgresql as the database for Active Record

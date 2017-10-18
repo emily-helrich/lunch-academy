@@ -13,3 +13,7 @@
  *= require_tree .
  *= require_self
  */
+ .heading {
+   border: 1px solid;
+   font-family: cursive;
+ }
