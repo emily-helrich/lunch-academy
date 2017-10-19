@@ -25,6 +25,3 @@
 
 Gemfile.lock
 yarn.lock
-
-public/packs/*
-public/packs-test/*
