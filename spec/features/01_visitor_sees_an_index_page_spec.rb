@@ -2,7 +2,7 @@ require 'rails_helper'
 
 feature "visitor sees an index page" do
   scenario "can see the page" do
-    visit sandwiches_path
+    visit root_path
     expect(page).to have_content "Is that a sandwich?"
   end
 end
