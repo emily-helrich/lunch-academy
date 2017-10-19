@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import SandwichTile from './SandwichTile'
 
 class SandwichIndex extends Component {
   constructor(props) {
@@ -26,12 +27,13 @@ class SandwichIndex extends Component {
   render() {
     let sandwiches = this.state.sandwichData.map((sandwich) => {
       return(
-        <div className="sandwich-tile">
-          <h3>{sandwich.name}</h3>
-          <h3>{sandwich.description}</h3>
-          <h3>{sandwich.image_url}</h3>
-          {/* this is where we'll add a SandwichTile */}
-        </div>
+        <SandwichTile
+          key={sandwich.id}
+          id={sandwich.id}
+          name={sandwich.name}
+          description={sandwich.description}
+          image_url={sandwich.image_url}
+        />
       );
     });
     return(

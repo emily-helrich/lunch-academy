@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: "pages#index"
-
+  get '/:id', to: 'pages#show'
 
   namespace :api do
     namespace :v1 do
