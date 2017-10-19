@@ -16,7 +16,7 @@ Devise.setup do |config|
 
   # Configure the class responsible to send e-mails.
   config.mailer = 'Devise::Mailer'
-  ActionMailer::Base.default_url_options = { :host => 'localhost' }
+  ActionMailer::Base.default_url_options = { :host => 'localhost:5000' }
 
   # Configure the parent class responsible to send e-mails.
   # config.parent_mailer = 'ActionMailer::Base'
