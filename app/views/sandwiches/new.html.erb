@@ -1,0 +1,33 @@
+<div>new sandwich form</div><br>
+
+<%= form_for @sandwich do |f| %>
+	<div class="field">
+		<%= f.label :name %>
+		<%= f.text_field :name %>
+	</div>
+
+	<div class="field">
+		<%= f.label :description %>
+		<%= f.text_field :description %>
+	</div>
+
+	<div class="field">
+		<%= f.label :image_url %>
+		<%= f.text_field :image_url %>
+	</div>
+
+	<div class="actions">
+		<%= f.submit %>
+	</div>
+<% end %>
+
+<% if @sandwich.errors.present? %>
+	<ul>
+		<p class="error">Error!</p>
+		<% @sandwich.errors.full_messages.each do |message| %>
+			<li>
+				<%= message %>
+			</li>
+		<% end %>
+	</ul>
+<% end %>
