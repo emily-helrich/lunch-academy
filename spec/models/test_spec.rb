@@ -12,9 +12,9 @@ describe Sandwich do
 end
 
 
-describe Review do 
-	it { should have_valid(:user_id).when(2) }
-	it { should_not have_valid(:user_id).when(nil, "") }
+describe Review do
+	# it { should have_valid(:user_id).when(2) }
+	# it { should_not have_valid(:user_id).when(nil, "") }
 
 	it { should have_valid(:sandwich_id).when(2) }
 	it { should_not have_valid(:sandwich_id).when(nil, "")}

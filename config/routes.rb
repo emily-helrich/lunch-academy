@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: "pages#index"
-  resources :sandwiches
+  resources :sandwiches do
+    resources :reviews
+  end
 
   namespace :api do
     namespace :v1 do
