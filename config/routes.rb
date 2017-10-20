@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: "pages#index"
+  get '/:id', to: 'pages#show'
+
   resources :sandwiches
 
   namespace :api do
@@ -8,5 +10,4 @@ Rails.application.routes.draw do
         resources :sandwiches, only: [:index, :show]
     end
   end
-
 end

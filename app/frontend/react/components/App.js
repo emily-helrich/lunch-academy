@@ -4,14 +4,20 @@ import {
   Route
 } from 'react-router-dom';
 import SandwichIndex from './SandwichIndex';
+import SandwichShow from './SandwichShow';
 
 const App = (props) => (
   <Router>
     <div>
       <Route
-        path='/'
+        exact path='/'
         component={SandwichIndex}
       />
+      <Route
+        path='/:id'
+        component={SandwichShow}
+      />
+
     </div>
   </Router>
 );
