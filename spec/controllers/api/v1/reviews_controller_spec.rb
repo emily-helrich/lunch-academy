@@ -33,7 +33,11 @@ RSpec.describe Api::V1::ReviewsController, type: :controller do
             rating: 5,
             body: "so good!",
             created_at: time,
-            updated_at: time
+            updated_at: time,
+            user:
+              {
+                email: user_one.email
+              }
           },
           {
             id: review_two.id,
@@ -42,7 +46,11 @@ RSpec.describe Api::V1::ReviewsController, type: :controller do
             rating:4,
             body:"just ok",
             created_at: time,
-            updated_at: time
+            updated_at: time,
+            user:
+              {
+                email: user_one.email
+              }
           }
         ]
       })
