@@ -5,10 +5,7 @@ class SandwichShow extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      id: "",
-      name: "",
-      description: "",
-      image_url: ""
+      sandwich: {}
     };
   }
 
@@ -22,10 +19,7 @@ class SandwichShow extends Component {
       .then((response) => response.json() )
       .then((body) => {
         this.setState({
-          id: body.sandwich.id,
-          name: body.sandwich.name,
-          description: body.sandwich.description,
-          image_url: body.sandwich.image_url
+          sandwich: body
         })
       })
       .catch(function(error){
