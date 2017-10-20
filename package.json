@@ -2,7 +2,8 @@
   "name": "lunch-academy",
   "private": true,
   "scripts": {
-    "start": "./bin/webpack-dev-server"
+    "start": "./bin/webpack-dev-server",
+    "test": "jest"
   },
   "dependencies": {
     "@rails/webpacker": "^3.0.2",
@@ -14,6 +15,33 @@
     "react-router-dom": "^4.2.2"
   },
   "devDependencies": {
+    "babel-jest": "^21.2.0",
+    "babel-loader": "^7.1.2",
+    "enzyme": "^3.1.0",
+    "enzyme-adapter-react-16": "^1.0.2",
+    "jest": "^21.2.1",
+    "jest-enzyme": "^4.0.1",
+    "react-scripts": "^1.0.14",
+    "react-test-renderer": "^16.0.0",
     "webpack-dev-server": "^2.9.2"
+  },
+  "jest": {
+    "verbose": true,
+    "transform": {
+      "^.+\\.js$": "babel-jest"
+    },
+    "globals": {
+      "NODE_ENV": "test"
+    },
+    "moduleFileExtensions": [
+      "js",
+      "jsx"
+    ],
+    "moduleDirectories": [
+      "node_modules",
+      "app/frontend"
+    ],
+    "testPathIgnorePatterns" : ["<rootDir>/config/"],
+    "setupTestFrameworkScriptFile": "<rootDir>/spec/test-setup.js"
   }
 }
