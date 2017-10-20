@@ -12,18 +12,6 @@ describe('<ReviewTile/>', () => {
         body="so good"
       />
     );
-    expect(wrapper.find('.review-tile')).toHaveText('test@gmail.com5so good');
+    expect(wrapper.find('.review-tile')).toContainClass('review-tile');
   });
-
-  // it('should be selectable by class "foo"', function() {
-  //   expect(shallow(<SimpleFoo />).is('.foo')).toBe(true);
-  // });
-  //
-  // it('should mount in a full DOM', function() {
-  //   expect(mount(<SimpleFoo />).find('.foo').length).toBe(1);
-  // });
-  //
-  // it('should render to static HTML', function() {
-  //   expect(render(<SimpleFoo />).text()).toEqual('Bar');
-  // });
 });

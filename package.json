@@ -15,6 +15,7 @@
     "react-router-dom": "^4.2.2"
   },
   "devDependencies": {
+    "@commercetools/jest-enzyme-matchers": "^1.1.2",
     "babel-jest": "^21.2.0",
     "babel-loader": "^7.1.2",
     "enzyme": "^3.1.0",
@@ -41,7 +42,9 @@
       "node_modules",
       "app/frontend"
     ],
-    "testPathIgnorePatterns" : ["<rootDir>/config/"],
+    "testPathIgnorePatterns": [
+      "<rootDir>/config/"
+    ],
     "setupTestFrameworkScriptFile": "<rootDir>/spec/test-setup.js"
   }
 }
