@@ -5,7 +5,9 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-        resources :sandwiches, only: [:index, :show]
+      resources :sandwiches, only: [:index, :show] do
+        resources :reviews, only: [:index]
+      end
     end
   end
 
