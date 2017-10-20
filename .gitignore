@@ -22,3 +22,6 @@
 
 .env
 /node_modules
+
+Gemfile.lock
+yarn.lock
