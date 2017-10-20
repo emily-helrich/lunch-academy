@@ -25,3 +25,15 @@ Review.create(
 	rating: 10,
 	body: "have you tried this bro?"
 )
+Review.create(
+	user_id: user_1.id,
+	sandwich_id: sandwich.id,
+	rating: 5,
+	body: "pretty dope"
+)
+Review.create(
+	user_id: user_1.id,
+	sandwich_id: sandwich.id,
+	rating: 7,
+	body: "whaaa!!!"
+)
