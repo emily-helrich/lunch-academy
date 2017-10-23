@@ -1,5 +1,6 @@
 class User < ApplicationRecord
 	has_many :reviews
+	has_many :votes
 	has_many :sandwiches, through: :reviews
 
 	validates :email, presence: true, uniqueness: true

@@ -11,6 +11,10 @@ Rails.application.routes.draw do
       resources :sandwiches, only: [:index, :show] do
         resources :reviews, only: [:index]
       end
+      post 'votes/up'     => 'votes#up'
+      post 'votes/down'   => 'votes#down'
+      get  'votes/user'   => 'votes#user_vote_count'
+      get  'votes/review' => 'votes#review_vote_count'
     end
   end
 end

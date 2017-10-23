@@ -25,6 +25,22 @@
         });
     }
 
+    handleUpVote(event) {
+      let reviewId = event.target.value;
+      let payload = JSON.stringify( { reviewId: reviewId } );
+      console.log(payload);
+      fetch(`/api/v1/votes/up`, {
+        credentials: 'same-origin',
+        method: 'POST',
+        'Content-Type': 'application/json',
+        body: payload
+      })
+        .then((response) => response.json() )
+        .then((body) => {
+          console.log(body);
+        });
+    }
+
     render() {
       let reviews = this.state.reviewsData.map(review => (
         <ReviewTile
@@ -37,6 +53,7 @@
           createdAt = {review.created_at}
           updatedAt = {review.updated_at}
           userEmail = {review.user.email}
+          handleUpVote = {this.handleUpVote}
         />
       ));
       return(
