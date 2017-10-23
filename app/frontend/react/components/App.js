@@ -5,6 +5,7 @@ import {
 } from 'react-router-dom';
 import SandwichIndex from './SandwichIndex';
 import ReviewsContainer from './ReviewsContainer';
+import SandwichShow from './SandwichShow';
 
 const App = (props) => (
   <Router>
@@ -17,7 +18,10 @@ const App = (props) => (
         path='/sandwiches/:sandwich_id/reviews'
         component={ReviewsContainer}
       />
-
+      <Route
+        path='/:id'
+        component={SandwichShow}
+      />
     </div>
   </Router>
 );
