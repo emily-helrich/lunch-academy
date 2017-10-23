@@ -5,6 +5,8 @@ import {
 } from 'react-router-dom';
 import SandwichIndex from './SandwichIndex';
 import SandwichShow from './SandwichShow';
+import styles from '../../../assets/stylesheets/application.css'
+
 
 const App = (props) => (
   <Router>

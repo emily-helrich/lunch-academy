@@ -1,4 +1,33 @@
+
+
 .sandwich-tile {
-  border: 1px solid;
-  font-family: cursive;
+  background-color: var(--lunch-tan);
+  margin: 10px;
+  padding: 0px;
+  font-family: 'Raleway', sans-serif;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: solid;
+  border-width: 2px;
+  /*border-radius: 10px;*/
+  border-color: var(--lunch-red);
+}
+
+.sandwich-tile h3 {
+  margin: 0;
+  padding: 5px;
+  background-color: var(--lunch-red);
+  color: var(--lunch-pale);
+}
+
+.sandwich-tile .tile-content {
+  padding-top: 10px;
+  text-align: center;
+}
+
+.sandwich-tile .description {
+  background-color: var(--lunch-pale);
+  padding: 10px;
+  margin-bottom: 0px;
 }

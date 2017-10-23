@@ -1,0 +1,43 @@
+body {
+  padding: 0;
+  margin: 0;
+  background-color: var(--lunch-pale);
+  color: var(--lunch-jet);
+  font-family: 'Raleway', sans-serif;
+}
+
+.navbar {
+  background-color: var(--lunch-orange);
+}
+
+.pull-right {
+  text-align: right;
+}
+
+.navbar-text {
+  margin: 0;
+  padding: 10px;
+  color: var(--lunch-white);
+}
+
+h1 {
+  font-family: 'Playfair Display', serif;
+  color: var(--lunch-jet);
+  margin: 0px;
+  padding: 10px;
+  border-size: 5px;
+  /*border-radius: 10px;*/
+  text-align: center;
+}
+
+a:link {
+  color: var(--lunch-pale);
+}
+
+a:visited {
+  color: var(--lunch-pale);
+}
+
+a:hover {
+  color: var(--lunch-pale);
+}
