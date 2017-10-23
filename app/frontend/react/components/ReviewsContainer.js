@@ -9,7 +9,7 @@
       };
     }
 
-    componentWillMount() {
+    componentDidMount() {
       let sandwichId = this.props.match.params.sandwich_id;
       fetch(`/api/v1/sandwiches/${sandwichId}/reviews`, {
         credentials: 'same-origin',

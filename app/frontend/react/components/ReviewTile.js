@@ -4,9 +4,9 @@ const ReviewTile = (props) => {
 
     return(
       <div className="review-tile">
-        <div>{props.userEmail}</div>
-        <div>{props.rating}</div>
-        <p>{props.body}</p>
+        <div className='email'>{props.userEmail}</div>
+        <div className='rating'>{props.rating}</div>
+        <p className='rating-body'>{props.body}</p>
 
       </div>
     );
