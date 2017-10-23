@@ -4,10 +4,13 @@ Rails.application.routes.draw do
   get '/:id', to: 'pages#show'
 
   resources :sandwiches
+  get '/sandwiches/:id/reviews', to: 'pages#reviews'
 
   namespace :api do
     namespace :v1 do
-        resources :sandwiches, only: [:index, :show]
+      resources :sandwiches, only: [:index, :show] do
+        resources :reviews, only: [:index]
+      end
     end
   end
 end
