@@ -8,14 +8,11 @@ class Api::V1::VotesController < ApplicationController
   #
   # #intialize user
   # before_action :initialize_user, :only=>[:user_vote_count, :user_like_count]
-  #
-  # #intialize votable object
-  # before_action :initialize_votable_object, :only=>[:model_vote_count, :model_like_count]
 
-
+  before_action :initialize_review, only: [:review_vote_count]
 
   def up
-    upvoteData = { user_id: current_user,
+    upvoteData = { user_id: 1,
                    review_id: vote_params[:review_id],
                    vote: 1
                   }
@@ -24,11 +21,12 @@ class Api::V1::VotesController < ApplicationController
   end
 
   def down
-
   end
 
   def review_vote_count
-
+    review_id = @review.id
+    voteCount = Review.find(review_id).votes.inject(0) { |memo,review| memo + review.vote }
+    render(json: { status: :ok, review_id: review_id, voteCount: voteCount })
   end
 
   def user_vote_count
@@ -36,17 +34,23 @@ class Api::V1::VotesController < ApplicationController
 
   private
 
-  def vote_params
-    params.permit(:review_id)
+  def initialize_review
+    binding.pry
+    @review = Review.find(params[:review_id])
   end
 
-  def send_get_response(upvotes,downvotes)
-    render(json: { status: :ok, upcount: upvotes.size ,upvotes:JSON.parse(upvotes.to_json), downcount: downvotes.size,downvotes: JSON.parse(downvotes.to_json) })
+  def vote_params
+    params.require(:vote).permit(:review_id)
   end
 
   def send_post_response(vote)
     if vote.save
-        render(json: { status: :ok, message: "Voted successfully" })
+      render(json: { status: :ok,
+        message: "Voted successfully",
+        data: {
+          voteCount: review_vote_count
+          }
+        })
     else
       render(json: { status: :unprocessable_entity, message: vote.errors })
     end

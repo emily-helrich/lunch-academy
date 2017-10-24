@@ -10,6 +10,7 @@ const ReviewTile = (props) => {
         <button
           onClick={props.handleUpVote}
           value={props.id}>Up Vote</button>
+        <p>Vote Count: {props.voteCount}</p>
       </div>
     );
 };

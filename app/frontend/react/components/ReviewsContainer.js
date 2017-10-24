@@ -9,7 +9,7 @@
       };
     }
 
-    componentDidMount() {
+    componentWillMount() {
       let sandwichId = this.props.match.params.sandwich_id;
       fetch(`/api/v1/sandwiches/${sandwichId}/reviews`, {
         credentials: 'same-origin',
@@ -26,13 +26,27 @@
     }
 
     handleUpVote(event) {
-      let reviewId = event.target.value;
-      let payload = JSON.stringify( { reviewId: reviewId } );
+      let payload = JSON.stringify( { review_id: event.target.value } );
       console.log(payload);
       fetch(`/api/v1/votes/up`, {
         credentials: 'same-origin',
         method: 'POST',
-        'Content-Type': 'application/json',
+        headers: {'Content-Type': 'application/json'},
+        body: payload
+      })
+        .then((response) => response.json() )
+        .then((body) => {
+          console.log(body);
+        });
+    }
+
+    getVoteCount(reviewId) {
+      let payload = JSON.stringify( { review_id: reviewId } );
+      console.log(payload);
+      fetch(`/api/v1/votes/reviews`, {
+        credentials: 'same-origin',
+        method: 'GET',
+        headers: {'Content-Type': 'application/json'},
         body: payload
       })
         .then((response) => response.json() )
@@ -53,6 +67,7 @@
           createdAt = {review.created_at}
           updatedAt = {review.updated_at}
           userEmail = {review.user.email}
+          voteCount = {this.getVoteCount(review.id)}
           handleUpVote = {this.handleUpVote}
         />
       ));
