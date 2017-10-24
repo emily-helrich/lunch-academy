@@ -1,0 +1,17 @@
+@import
+url('https://fonts.googleapis.com/css?family=Playfair+Display|Raleway');
+
+
+/*app colors*/
+:root {
+  --lunch-jet: #3A3335;
+  --lunch-pale: #FEFFF9;
+  --lunch-white: #FFFFFF;
+  --lunch-black: #000000;
+  --lunch-blue: #2B59C3;
+  --lunch-green: #7CB518;
+  --lunch-tan: #FFDDA1;
+  --lunch-orange: #FFB23F;
+  --lunch-red: #FE5F55;
+  /*-alt-colors-*/
+}

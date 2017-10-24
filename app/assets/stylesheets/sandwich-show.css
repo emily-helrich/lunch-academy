@@ -1,0 +1,55 @@
+
+hr {
+  margin: 0px;
+  padding: 0px;
+}
+
+.sandwich-page {
+  background-color: var(--lunch-tan);
+}
+
+.sandwich-page h1 {
+  background-color: var(--lunch-red);
+  color: var(--lunch-pale);
+  margin: 0px;
+}
+
+.sandwich-page .image {
+  margin-left: 0;
+  width: 40%;
+  float: left;
+}
+
+.sandwich-page .description {
+  background-color: var(--lunch-pale);
+  margin: 0;
+}
+
+
+/*div class="sandwich-page">
+  <h1>Philly Cheese Steak</h1>
+  <div class="image">
+    <img src='https://i.imgur.com/dShMQAY.jpg' />
+  </div>
+  <p class="description">
+    Steak 'n Cheese Steak 'n Cheese Steak 'n Cheese Steak 'n Cheese Steak 'n Cheese Steak 'n Cheese Steak 'n Cheese.
+  </p>
+  <div class="reviews-container">
+    <div class="review-tile">
+      <h3>Review</h3>
+      <div class="tile-content">
+        <p> ★★★★☆ </p>
+        <p>▲</p>
+        <p>42</p>
+        <p>▼</p>
+        <p class="review-body">Pretty good Pretty good Pretty good Pretty good Pretty good.</p>
+      </div>
+    </div>
+    <div class="review-tile">
+      <h3>Review</h3>
+      <div class="tile-content">
+        <p> ★★★★★ </p>
+        <p>▲</p>
+        <p>9</p>
+        <p>▼</p>
+        <p class="review-body">*/
