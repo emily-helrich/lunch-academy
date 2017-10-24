@@ -5,8 +5,10 @@ import React from 'react'
 const SandwichTile = (props) => (
   <div className="sandwich-tile">
     <h3>{props.name}</h3>
-    <h3>{props.description}</h3>
-    <img src={props.image_url} />
+    <div className="tile-content">
+      <img src={props.image_url} />
+      <p className="description">{props.description}</p>
+    </div>
   </div>
 )
 
