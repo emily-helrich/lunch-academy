@@ -82,7 +82,7 @@
         />
       ));
       return(
-        <div>
+        <div className="review-list">
           <p>{this.state.alerts}</p>
           {reviews}
         </div>
