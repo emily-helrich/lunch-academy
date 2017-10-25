@@ -9,7 +9,14 @@ const ReviewTile = (props) => {
         <p className='rating-body'>{props.body}</p>
         <button
           onClick={props.handleUpVote}
-          value={props.id}>Up Vote</button>
+          value={props.id}>
+            Up Vote
+        </button>
+        <button
+          onClick={props.handleDownVote}
+          value={props.id}>
+            Down Vote
+        </button>
         <p>Vote Count: {props.voteCount}</p>
       </div>
     );

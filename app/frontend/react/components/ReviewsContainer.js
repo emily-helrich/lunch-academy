@@ -40,12 +40,12 @@
         });
     }
 
-    getVoteCount(reviewId) {
-      let payload = JSON.stringify( { review_id: reviewId } );
+    handleDownVote(event) {
+      let payload = JSON.stringify( { review_id: event.target.value } );
       console.log(payload);
-      fetch(`/api/v1/votes/reviews`, {
+      fetch(`/api/v1/votes/down`, {
         credentials: 'same-origin',
-        method: 'GET',
+        method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: payload
       })
@@ -67,8 +67,9 @@
           createdAt = {review.created_at}
           updatedAt = {review.updated_at}
           userEmail = {review.user.email}
-          voteCount = {this.getVoteCount(review.id)}
+          voteCount = {review.vote_count}
           handleUpVote = {this.handleUpVote}
+          handleDownVote = {this.handleDownVote}
         />
       ));
       return(
