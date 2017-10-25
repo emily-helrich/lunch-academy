@@ -61,6 +61,10 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    carrierwave (1.0.0)
+      activemodel (>= 4.0.0)
+      activesupport (>= 4.0.0)
+      mime-types (>= 1.16)
     case_transform (0.2)
       activesupport
     coderay (1.1.2)
@@ -245,6 +249,7 @@ DEPENDENCIES
   active_model_serializers
   byebug
   capybara
+  carrierwave (~> 1.0)
   coveralls
   devise
   factory_girl
@@ -268,4 +273,4 @@ DEPENDENCIES
   webpacker (~> 3.0)
 
 BUNDLED WITH
-   1.15.4
+   1.16.0.pre.3

@@ -1,0 +1,33 @@
+<div>New Review Form for <%= @sandwich.name %> </div><br>
+
+<%= form_for [@sandwich, @review] do |f| %>
+	<div class="field">
+		<%= f.label :rating %>
+		<%= f.text_field :rating %>
+	</div>
+
+	<div class="field">
+		<%= f.label :body %>
+		<%= f.text_field :body %>
+	</div>
+
+  <div class="field">
+		<%= f.text_field :user, value: @user %>
+	</div>
+
+	<div class="actions">
+		<%= f.submit %>
+	</div>
+
+<% end %>
+
+<% if @review.errors.present? %>
+	<ul>
+		<p class="error">Error!</p>
+		<% @review.errors.full_messages.each do |message| %>
+			<li>
+				<%= message %>
+			</li>
+		<% end %>
+	</ul>
+<% end %>
