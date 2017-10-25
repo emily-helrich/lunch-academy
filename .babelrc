@@ -13,11 +13,6 @@
     ],
     "react"
   ],
-  "env": {
-    "test": {
-      "plugins": ["transform-es2015-modules-commonjs"]
-    }
-  },
   "plugins": [
     "syntax-dynamic-import",
     "transform-object-rest-spread",
