@@ -6,6 +6,8 @@ import {
 import SandwichIndex from './SandwichIndex';
 import ReviewsContainer from './ReviewsContainer';
 import SandwichShow from './SandwichShow';
+import styles from '../../../assets/stylesheets/application.css'
+
 
 const App = (props) => (
   <Router>
