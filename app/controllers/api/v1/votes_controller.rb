@@ -1,10 +1,10 @@
 class Api::V1::VotesController < ApplicationController
   protect_from_forgery prepend: true
 
-  # before_action :authenticate_user_api, only: [:up, :down]
+  before_action :authenticate_user_api, only: [:up, :down]
 
   def up
-    upvoteData = { user_id: 1,
+    upvoteData = { user_id: current_user.id,
                    review_id: vote_params[:review_id],
                    vote: 1
                   }
@@ -13,7 +13,7 @@ class Api::V1::VotesController < ApplicationController
   end
 
   def down
-    upvoteData = { user_id: 1,
+    upvoteData = { user_id: current_user.id,
                    review_id: vote_params[:review_id],
                    vote: -1
                   }
