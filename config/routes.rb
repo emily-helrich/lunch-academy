@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: "pages#index"
-  get '/sandwiches/:id', to: 'pages#show'
-
+  
   resources :sandwiches do
     resources :reviews
   end
@@ -14,5 +13,4 @@ Rails.application.routes.draw do
       end
     end
   end
-
 end

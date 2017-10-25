@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import SandwichTile from './SandwichTile'
+import {Link} from 'react-router-dom';
 
 class SandwichIndex extends Component {
   constructor(props) {
@@ -22,7 +23,7 @@ class SandwichIndex extends Component {
       .catch(function(error){
         console.log(error);
       });
-  }
+  };
 
   render() {
     let sandwiches = this.state.sandwichData.map((sandwich) => {
@@ -38,10 +39,15 @@ class SandwichIndex extends Component {
     });
     return(
       <div>
-        {sandwiches}
+        <h1>
+          <Link className='sandwichFormLink' to={`/sandwiches/new`}>New Sandwich</Link> 
+        </h1>
+        {sandwiches}  
       </div>
     );
   }
 }
 
 export default SandwichIndex;
+
+

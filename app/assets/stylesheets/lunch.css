@@ -30,7 +30,7 @@ h1 {
   text-align: center;
 }
 
-a:link {
+/*a:link {
   color: var(--lunch-pale);
 }
 
@@ -40,4 +40,5 @@ a:visited {
 
 a:hover {
   color: var(--lunch-pale);
-}
+}*/
+

@@ -1,8 +1,4 @@
 class SandwichesController < ApplicationController
-	def index
-		
-	end
-
 	def new
 		@sandwich = Sandwich.new()
 	end
