@@ -5,8 +5,11 @@
     constructor(props) {
       super(props);
       this.state = {
-        reviewsData: []
+        reviewsData: [],
+        alerts: null
       };
+      this.handleUpVote = this.handleUpVote.bind(this);
+      this.handleDownVote = this.handleDownVote.bind(this);
     }
 
     componentWillMount() {
@@ -27,7 +30,7 @@
 
     handleUpVote(event) {
       let payload = JSON.stringify( { review_id: event.target.value } );
-      console.log(payload);
+
       fetch(`/api/v1/votes/up`, {
         credentials: 'same-origin',
         method: 'POST',
@@ -37,12 +40,15 @@
         .then((response) => response.json() )
         .then((body) => {
           console.log(body);
+          this.setState({
+            alerts: body.message
+          });
         });
     }
 
     handleDownVote(event) {
       let payload = JSON.stringify( { review_id: event.target.value } );
-      console.log(payload);
+
       fetch(`/api/v1/votes/down`, {
         credentials: 'same-origin',
         method: 'POST',
@@ -52,6 +58,9 @@
         .then((response) => response.json() )
         .then((body) => {
           console.log(body);
+          this.setState({
+            alerts: body.message
+          });
         });
     }
 
@@ -74,6 +83,7 @@
       ));
       return(
         <div>
+          <p>{this.state.alerts}</p>
           {reviews}
         </div>
       );
