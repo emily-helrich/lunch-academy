@@ -16,6 +16,9 @@ class ReviewsController < ApplicationController
     @review.user = @user
 		if @review.save
 			flash[:notice] = "Review added successfully!"
+
+			UserMailer.new_review_email(@sandwich, @reivew).deliver_later
+
 			redirect_to root_path
 		else
 			render :new
