@@ -5,6 +5,7 @@
     constructor(props) {
       super(props);
       this.state = {
+        sandwichId: props.sandwichId,
         reviewsData: [],
         alerts: null
       };
@@ -12,8 +13,8 @@
       this.handleDownVote = this.handleDownVote.bind(this);
     }
 
-    componentWillMount() {
-      let sandwichId = this.props.match.params.sandwich_id;
+    componentDidMount() {
+      let sandwichId = this.state.sandwichId;
       fetch(`/api/v1/sandwiches/${sandwichId}/reviews`, {
         credentials: 'same-origin',
         method: 'GET',

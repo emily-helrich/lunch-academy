@@ -1,16 +1,19 @@
 import React, { Component } from 'react';
-import SandwichTile from './SandwichTile'
+import SandwichTile from './SandwichTile';
+import ReviewsContainer from './ReviewsContainer';
 
 class SandwichShow extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      sandwich: {}
+      sandwich: {},
+      loading: true,
     };
   }
 
   componentDidMount() {
-    let sandwichID = this.props.match.params.id
+    let sandwichID = this.props.match.params.id;
+    console.log(sandwichID);
     fetch(`/api/v1/sandwiches/${sandwichID}`, {
       credentials: 'same-origin',
       method: 'GET',
@@ -19,8 +22,9 @@ class SandwichShow extends Component {
       .then((response) => response.json() )
       .then((body) => {
         this.setState({
-          sandwich: body
-        })
+          sandwich: body.sandwich,
+          loading: false,
+        });
       })
       .catch(function(error){
         console.log(error);
@@ -28,15 +32,26 @@ class SandwichShow extends Component {
   }
 
   render() {
-
+    const sandwich = this.state.sandwich;
+    let reviewsContainer = '';
+    if (!this.state.loading) {
+      reviewsContainer =
+        <ReviewsContainer
+          sandwichId={this.state.sandwich.id}
+        />;
+    }
     return(
-      <SandwichTile
-        key={this.state.id}
-        id={this.state.id}
-        description={this.state.description}
-        image_url={this.state.image_url}
-      />
-    )
+      <div>
+        <SandwichTile
+          key={sandwich.id}
+          id={sandwich.id}
+          name={sandwich.name}
+          description={sandwich.description}
+          image_url={sandwich.image_url}
+        />
+        {reviewsContainer}
+      </div>
+    );
   }
 }
 export default SandwichShow;
