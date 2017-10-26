@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import SandwichTile from './SandwichTile'
+import SandwichTile from './SandwichTile';
 import {Link} from 'react-router-dom';
+import { Grid, Row, Col, Image } from 'react-bootstrap';
+import { ButtonGroup, Button } from 'react-bootstrap';
 
 class SandwichIndex extends Component {
   constructor(props) {
@@ -23,31 +25,41 @@ class SandwichIndex extends Component {
       .catch(function(error){
         console.log(error);
       });
-  };
+  }
 
   render() {
     let sandwiches = this.state.sandwichData.map((sandwich) => {
       return(
-        <SandwichTile
-          key={sandwich.id}
-          id={sandwich.id}
-          name={sandwich.name}
-          description={sandwich.description}
-          image_url={sandwich.image_url}
-        />
+        <div key={sandwich.id} className='card mb-3 w-25' style={{margin: '1em'}}>
+          <a href={`/sandwiches/${sandwich.id}`}>
+            <img className="card-img-top" src={sandwich.image_url} />
+          </a>
+          <div className='card-block'>
+            <h3 className="card-title ">{sandwich.name}</h3>
+          </div>
+        </div>
       );
     });
+
+    const buttonStyle = {
+        margin: '10px'
+    };
+
     return(
       <div>
-        <h1>
-          <a href={`/sandwiches/new`}>New Review</a> 
-        </h1>
-        {sandwiches}  
+        <div style={buttonStyle}>
+          <ButtonGroup vertical block>
+            <Button href={`/sandwiches/new`} bsStyle="primary" bsSize="large">Add a Sandwich</Button>
+          </ButtonGroup>
+        </div>
+        <Grid>
+          <Row>
+            {sandwiches}
+          </Row>
+        </Grid>
       </div>
     );
   }
 }
 
 export default SandwichIndex;
-
-
