@@ -12,13 +12,11 @@ user_1 = User.create(
 	password: "passwsdfsdfsdfsdfsdfsdord1",
 	sign_in_count: 1
 )
-
 sandwich = Sandwich.create(
 	name: "rueben_also",
 	description: "it's yum",
 	image_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Katz%27s_Deli_-_Lunch.jpg/800px-Katz%27s_Deli_-_Lunch.jpg"
 )
-
 Review.create(
 	user_id: user_1.id,
 	sandwich_id: sandwich.id,
@@ -36,14 +34,13 @@ Review.create(
 	sandwich_id: sandwich.id,
 	rating: 7,
 	body: "whaaa!!!"
-
-grilled_cheese = Sandwich.create(
+)
+Sandwich.create(
 	name: "Grilled Cheese",
 	description: "Toast and cheese",
 	image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRB3NNZ-K5nXiuDTWnSyHWzsVsTN8O6KKBoDe8w2OLRA_Af-RXq"
 )
-
-pbj = Sandwich.create(
+Sandwich.create(
 	name: "Peanut Butter and Jelly",
 	description: "classic american lunch",
 	image_url: "http://www.seriouseats.com/images/20070401istockpbjbeauty.jpg"

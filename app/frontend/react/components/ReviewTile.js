@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
 const ReviewTile = (props) => {
-
     return(
       <div className="review-tile">
         <div className='email'>{props.userEmail}</div>
