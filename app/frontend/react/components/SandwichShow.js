@@ -49,6 +49,7 @@ class SandwichShow extends Component {
           description={sandwich.description}
           image_url={sandwich.image_url}
         />
+        <a href={ `/sandwiches/${sandwich.id}/reviews/new`}>New Review</a>
         {reviewsContainer}
       </div>
     );
