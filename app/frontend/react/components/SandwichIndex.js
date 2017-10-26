@@ -40,7 +40,7 @@ class SandwichIndex extends Component {
     return(
       <div>
         <h1>
-          <Link className='sandwichFormLink' to={`/sandwiches/new`}>New Sandwich</Link> 
+          <a href={`/sandwiches/new`}>New Review</a> 
         </h1>
         {sandwiches}  
       </div>

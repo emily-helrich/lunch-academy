@@ -7,7 +7,7 @@ class SandwichShow extends Component {
    this.state = {
      sandwich: {}
    };
- }
+ };
 
  componentDidMount() {
    let sandwichID = this.props.match.params.id;
@@ -25,7 +25,7 @@ class SandwichShow extends Component {
      .catch(function(error){
        console.log(error);
      });
- }
+ };
 
  render() {
    const sandwich = this.state.sandwich;
@@ -38,6 +38,7 @@ class SandwichShow extends Component {
        image_url={sandwich.image_url}
      />
    );
- }
-}
+ };
+};
+
 export default SandwichShow;
