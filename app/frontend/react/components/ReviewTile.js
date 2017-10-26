@@ -6,6 +6,10 @@ const ReviewTile = (props) => {
         <div className='email'>{props.userEmail}</div>
         <div className='rating'>{props.rating}</div>
         <p className='rating-body'>{props.body}</p>
+        <button
+          onClick={props.handleUpVote}
+          value={props.id}>Up Vote</button>
+        <p>Vote Count: {props.voteCount}</p>
       </div>
     );
 };
