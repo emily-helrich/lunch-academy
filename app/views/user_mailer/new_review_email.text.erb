@@ -1,0 +1,14 @@
+Hi <%= @user.name %>! There's a new review on your sandwich:
+===============================================
+
+For Sandwich: <%= @sandwich.name %>
+
+Review:
+Rating: <%= @review.rating %>
+<%= @review.body %>
+--
+Created: <%= @review.created_at %>
+
+See your sandwich on lunchacademy: <%= @url %>
+
+Thanks!

@@ -21,7 +21,7 @@ const App = (props) => (
         component={ReviewsContainer}
       />
       <Route
-        path='/:id'
+        path='/sandwiches/:id'
         component={SandwichShow}
       />
     </div>

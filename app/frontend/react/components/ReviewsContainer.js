@@ -5,12 +5,16 @@
     constructor(props) {
       super(props);
       this.state = {
-        reviewsData: []
+        sandwichId: props.sandwichId,
+        reviewsData: [],
+        alerts: null
       };
+      this.handleUpVote = this.handleUpVote.bind(this);
+      this.handleDownVote = this.handleDownVote.bind(this);
     }
 
     componentDidMount() {
-      let sandwichId = this.props.match.params.sandwich_id;
+      let sandwichId = this.state.sandwichId;
       fetch(`/api/v1/sandwiches/${sandwichId}/reviews`, {
         credentials: 'same-origin',
         method: 'GET',
@@ -22,6 +26,42 @@
         })
         .catch(function(error){
           console.log(error);
+        });
+    }
+
+    handleUpVote(event) {
+      let payload = JSON.stringify( { review_id: event.target.value } );
+
+      fetch(`/api/v1/votes/up`, {
+        credentials: 'same-origin',
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: payload
+      })
+        .then((response) => response.json() )
+        .then((body) => {
+          console.log(body);
+          this.setState({
+            alerts: body.message
+          });
+        });
+    }
+
+    handleDownVote(event) {
+      let payload = JSON.stringify( { review_id: event.target.value } );
+
+      fetch(`/api/v1/votes/down`, {
+        credentials: 'same-origin',
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: payload
+      })
+        .then((response) => response.json() )
+        .then((body) => {
+          console.log(body);
+          this.setState({
+            alerts: body.message
+          });
         });
     }
 
@@ -37,10 +77,14 @@
           createdAt = {review.created_at}
           updatedAt = {review.updated_at}
           userEmail = {review.user.email}
+          voteCount = {review.vote_count}
+          handleUpVote = {this.handleUpVote}
+          handleDownVote = {this.handleDownVote}
         />
       ));
       return(
-        <div>
+        <div className="review-list">
+          <p>{this.state.alerts}</p>
           {reviews}
         </div>
       );

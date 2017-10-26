@@ -1,7 +1,4 @@
 class SandwichesController < ApplicationController
-	def index
-	end
-
 	def new
 		@sandwich = Sandwich.new()
 	end
@@ -15,7 +12,10 @@ class SandwichesController < ApplicationController
 			render :new
 		end
 	end
-
+	
+	def show
+	end
+	
 	private 
 	
 	def sandwich_params
