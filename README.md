@@ -1,27 +1,65 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
+Lunch Academy is a Rails-React website for reviewing sandwiches. Denise Walter, Zach Hirschritt, Dan Glick, and Emily Herlich built it in Fall 2017 as a group project for Launch Academy, a coding bootcamp.
 
 * Ruby version
-
-* System dependencies
+  ruby 2.3.3
 
 * Configuration
-
+  dependencies:
+      @rails/webpacker: ^3.0.2
+      babel-preset-react: ^6.24.1
+      coffeescript: 1.12.7
+      prop-types: ^15.6.0
+      react: ^16.0.0
+      react-dom: ^16.0.0
+      react-router-dom: ^4.2.2
+      sass-loader: ^6.0.6
+  devDependencies: 
+      @commercetools/jest-enzyme-matchers: ^1.1.2
+      babel-jest: ^21.2.0
+      babel-loader: ^7.1.2
+      enzyme: ^3.1.0
+      enzyme-adapter-react-16: ^1.0.2
+      jest: ^21.2.1
+      jest-enzyme: ^4.0.1
+      react-scripts: ^1.0.14
+      react-test-renderer: ^16.0.0
+      sinon: ^4.0.1
+      webpack-dev-server: ^2.9.2
+    jest: 
+      verbose: true
+      transform: 
+        ^.+\\.js$: babel-jest
+      globals: 
+        NODE_ENV: test
+      moduleFileExtensions: 
+        js
+        jsx
+      moduleDirectories: 
+        node_modules
+        app/frontend
+      testPathIgnorePatterns: 
+        <rootDir>/config/
+      setupTestFrameworkScriptFile: <rootDir>/spec/test-setup.js
+  
 * Database creation
+  Heroku Postgres
 
 * Database initialization
+  Command line:
+    rake db:create
+    rake db:migrate
+    rake db:seed
 
 * How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
+  Command line:
+    rake
+    jest
 
 * Deployment instructions
-
-* ...
+  Command line:
+    git clone [repo]
+    bundle install, yarn install
+    foreman start
 
 [ ![Codeship Status for emily-helrich/lunch-academy](https://app.codeship.com/projects/9459b320-94c4-0135-ea79-5e19c06be32c/status?branch=master)](https://app.codeship.com/projects/251042)
 
