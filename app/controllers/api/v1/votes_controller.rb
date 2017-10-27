@@ -25,7 +25,9 @@ class Api::V1::VotesController < ApplicationController
 
   def authenticate_user_api
     unless user_signed_in?
-      render json: { error: "Not authorized" }, status: :unauthorized
+      render( json: { error: "Not authorized",
+                      message: "You must be singed-in to vote",
+                      status: :unauthorized })
     end
   end
 

@@ -35,22 +35,21 @@ class SandwichShow extends Component {
     const sandwich = this.state.sandwich;
     let reviewsContainer = '';
     if (!this.state.loading) {
-      reviewsContainer =
-        <ReviewsContainer
-          sandwichId={this.state.sandwich.id}
-        />;
+      reviewsContainer = <ReviewsContainer sandwichId={sandwich.id} />;
     }
     return(
       <div>
-        <SandwichTile
-          key={sandwich.id}
-          id={sandwich.id}
-          name={sandwich.name}
-          description={sandwich.description}
-          image_url={sandwich.image_url}
-        />
-        <a href={ `/sandwiches/${sandwich.id}/reviews/new`}>New Review</a>
+      <div className='media' >
+        <img className="w-50 mr-3 my-2 z-depth-2" src={sandwich.image_url} />
+        <div className="media-body" >
+          <h1 className="mt-0">{sandwich.name}</h1>
+            {sandwich.description}
+        </div>
+      </div>
+      <a href={ `/sandwiches/${sandwich.id}/reviews/new`}>New Review</a>
+      <div className="reviews">
         {reviewsContainer}
+      </div>
       </div>
     );
   }

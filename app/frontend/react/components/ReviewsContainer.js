@@ -1,5 +1,4 @@
   import React, { Component } from 'react';
-  import ReviewTile from './ReviewTile';
 
   class ReviewsContainer extends Component {
     constructor(props) {
@@ -11,6 +10,7 @@
       };
       this.handleUpVote = this.handleUpVote.bind(this);
       this.handleDownVote = this.handleDownVote.bind(this);
+      this.handleCloseAlert = this.handleCloseAlert.bind(this);
     }
 
     componentDidMount() {
@@ -65,28 +65,52 @@
         });
     }
 
+    handleCloseAlert() {
+      this.setState({
+        alerts: null
+      });
+    }
+
     render() {
       let reviews = this.state.reviewsData.map(review => (
-        <ReviewTile
-          key = {review.id}
-          id = {review.id}
-          userId = {review.user_id}
-          sandwichId = {review.sandwich_id}
-          rating = {review.rating}
-          body = {review.body}
-          createdAt = {review.created_at}
-          updatedAt = {review.updated_at}
-          userEmail = {review.user.email}
-          voteCount = {review.vote_count}
-          handleUpVote = {this.handleUpVote}
-          handleDownVote = {this.handleDownVote}
-        />
+        <div key={review.id} className="col-lg-7 ml-xl-4 mb-4">
+           <a href="" className="teal-text"/>
+           <p>from <strong>{review.user.email}</strong>, {review.created_at}</p>
+           <p><strong>Rating: </strong>{review.rating}</p>
+           <p><strong>Review: </strong>{review.body}</p>
+
+           <button onClick={this.handleUpVote}
+           value={review.id} type="button"
+           className="ml-0 btn btn-sm btn-outline-success">Up Vote
+           </button>
+           <button onClick={this.handleDownVote}
+           value={review.id} type="button"
+           className="btn btn-sm btn-outline-danger">Down Vote
+           </button>
+
+           <p>Vote Count: {review.vote_count}</p>
+         </div>
       ));
+
+      let alerts = this.state.alerts;
+      if (alerts) {
+        alerts =
+        <div className="alert alert-warning alert-dismissible fade show" role="alert">
+            <button type="button" className="close" data-dismiss="alert" aria-label="Close" onClick={this.handleCloseAlert}>
+              <span aria-hidden="true">&times;</span>
+            </button>
+            {this.state.alerts}
+        </div>;
+      }
+
       return(
-        <div className="review-list">
-          <p>{this.state.alerts}</p>
+      <section className="section extra-margins pb-3 mx-auto text-center text-lg-left">
+        <h2 className="section-heading h1 pt-4">Top Voted Reviews</h2>
+        {alerts}
+        <div className="list-group">
           {reviews}
         </div>
+      </section>
       );
     }
   }
