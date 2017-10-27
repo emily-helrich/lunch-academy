@@ -3,24 +3,35 @@
   <head>
     <title>LunchAcademy</title>
     <%= csrf_meta_tags %>
-    
+
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
 
   <body>
-    <div class="navbar">
-      <p class="navbar-text pull-right">
+    <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+      <a class="navbar-brand lunch-brand" href="#">LUNCH ACADEMY</a>
+      <ul class="nav navbar-nav">
         <% if user_signed_in? %>
-          Logged in as <strong> <%= current_user.email %> </strong>
-          <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
-          <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link' %>
+          <li class="nav-item">
+            Logged in as <strong> <%= current_user.email %> </strong>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link' %>
+          </li>
         <% else %>
-          <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link' %>
-          <%= link_to "Login", new_user_session_path, :class => 'navbar-link' %>
+          <li class="nav-item">
+            <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link' %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Login", new_user_session_path, :class => 'navbar-link' %>
+          </li>
         <% end %>
-      </p>
-    </div>
+      </ul>
+    </nav>
 
     <% if notice %>
       <p class="alert alert-success"> <%= notice %> </p>

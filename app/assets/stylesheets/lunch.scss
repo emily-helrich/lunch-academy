@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css?family=Bungee|Open+Sans|Roboto:300i,400');
+@import 'bootstrap';
+
+.lunch-brand {
+  font-family: 'Bungee', cursive;
+  font-size: 25px;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #FDFDFD;
+}
+
+.sandwich-tile {
+  max-height: 300px;
+  max-width: 300px;
+}

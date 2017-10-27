@@ -1,13 +1,13 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: "pages#index"
-  
+  get 'sandwiches/:id', to: 'pages#show'
+
   resources :sandwiches do
     resources :reviews
   end
 
 
-  get '/:id', to: 'pages#show'
 
   resources :sandwiches
   get '/sandwiches/:id/reviews', to: 'pages#reviews'

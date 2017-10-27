@@ -6,7 +6,7 @@ import {
 import SandwichIndex from './SandwichIndex';
 import ReviewsContainer from './ReviewsContainer';
 import SandwichShow from './SandwichShow';
-import styles from '../../../assets/stylesheets/application.css'
+import styles from '../../../assets/stylesheets/application';
 
 
 const App = (props) => (
