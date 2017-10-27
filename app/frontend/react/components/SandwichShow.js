@@ -42,7 +42,7 @@ class SandwichShow extends Component {
       <div className='media' >
         <img className="w-50 mr-3 my-2 z-depth-2" src={sandwich.image_url} />
         <div className="media-body" >
-          <h1 className="mt-0">{sandwich.name}</h1>
+          <h1 className="h1 mt-0">{sandwich.name}</h1>
             {sandwich.description}
         </div>
       </div>
@@ -54,4 +54,5 @@ class SandwichShow extends Component {
     );
   }
 }
+
 export default SandwichShow;

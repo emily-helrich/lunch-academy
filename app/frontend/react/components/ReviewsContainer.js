@@ -73,18 +73,18 @@
     }
 
     render() {
-
-      let sandwich_rating = (rating) => {
-        let sandwiches = [];
+      let sandwichRating = (rating) => {
+        let sandwichArray = [];
           for (let i = 0; i < rating; i++) {
-            sandwiches.push(<img src={sandwich_icon} height='30px' width='50px'/>);
+            sandwichArray.push(
+              <img key={i} src={sandwich_icon} height='30px' width='50px'/>
+            );
           }
-        return sandwiches;
+        return sandwichArray;
       };
-      console.log(sandwich_rating(2));
 
       let reviews = this.state.reviewsData.map(review => {
-        let sandwiches = sandwich_rating(review.rating);
+        let sandwiches = sandwichRating(review.rating);
         return (
           <div key={review.id} className="col-lg-7 ml-xl-4 mb-4">
              <a href="" className="teal-text"/>
@@ -117,8 +117,8 @@
       }
 
       return(
-      <section className="section extra-margins pb-3 mx-auto text-center text-lg-left">
-        <h2 className="section-heading h1 pt-4">Top Voted Reviews</h2>
+      <section className="section extra-margins pb-3 mx-auto text-lg-left">
+        <p className="section-heading h3 pt-4">Top Voted Reviews</p>
         {alerts}
         <div className="list-group">
           {reviews}
