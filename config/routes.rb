@@ -1,16 +1,15 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: "pages#index"
-  get 'sandwiches/:id', to: 'pages#show'
+  resources :sandwiches, only: [:new]
+  get '/sandwiches',     to: 'sandwiches#index'
+  get '/sandwiches/new', to: 'sandwiches#new'
+  get '/sandwiches/:id', to: 'pages#show'
+  get '/sandwiches/:id/reviews/new', to: 'reviews#new'
 
   resources :sandwiches do
     resources :reviews
   end
-
-
-
-  resources :sandwiches
-  get '/sandwiches/:id/reviews', to: 'pages#reviews'
 
   namespace :api do
     namespace :v1 do

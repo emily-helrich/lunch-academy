@@ -46,7 +46,7 @@ class SandwichShow extends Component {
             {sandwich.description}
         </div>
       </div>
-      <a href={ `/sandwiches/${sandwich.id}/reviews/new`}>New Review</a>
+      <a className="btn btn-primary" href={`/sandwiches/${sandwich.id}/reviews/new`} role="button">Leave a New Review</a>
       <div className="reviews">
         {reviewsContainer}
       </div>

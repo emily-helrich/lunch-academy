@@ -52,7 +52,7 @@ Sandwich.create(
 )
 
 Review.create(
-	user_id: user_1.id,
+	user_id: 1,
 	sandwich_id: 2,
 	rating: 5,
 	body: "have you tried this bro?"
@@ -64,49 +64,49 @@ Review.create(
 	body: "pretty dope"
 )
 Review.create(
-	user_id: user_1.id,
+	user_id: 1,
 	sandwich_id: 3,
 	rating: 2,
 	body: "whaaa!!!"
 )
 Review.create(
-	user_id: user_1.id,
+	user_id: 1,
 	sandwich_id: 4,
 	rating: 1,
 	body: "You really thing That's a sandwich??"
 )
 Review.create(
-	user_id: user_1.id,
+	user_id: 1,
 	sandwich_id: 3,
 	rating: 5,
 	body: "Sooo good"
 )
 Review.create(
-	user_id: user_1.id,
+	user_id: 1,
 	sandwich_id: 6,
 	rating: 1,
 	body: "Has a nice texture.  Flavor kinda threw me off though.  So unexpected."
 )
 Review.create(
-	user_id: user_1.id,
+	user_id: 1,
 	sandwich_id: 2,
 	rating: 1,
 	body: "pretty alright"
 )
 Review.create(
-	user_id: user_1.id,
+	user_id: 1,
 	sandwich_id: 5,
 	rating: 1,
 	body: "I want to eat these every day.  They're AmAZiNg!"
 )
 Review.create(
-	user_id: user_1.id,
+	user_id: 1,
 	sandwich_id: 1,
 	rating: 5,
 	body: "Loved it!"
 )
 Review.create(
-	user_id: user_1.id,
+	user_id: 1,
 	sandwich_id: 1,
 	rating: 1,
 	body: "Meh."
