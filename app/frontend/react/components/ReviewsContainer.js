@@ -1,4 +1,5 @@
   import React, { Component } from 'react';
+  import sandwich_icon from '../../../assets/images/sandwich_icon.png';
 
   class ReviewsContainer extends Component {
     constructor(props) {
@@ -72,25 +73,37 @@
     }
 
     render() {
-      let reviews = this.state.reviewsData.map(review => (
-        <div key={review.id} className="col-lg-7 ml-xl-4 mb-4">
-           <a href="" className="teal-text"/>
-           <p>from <strong>{review.user.email}</strong>, {review.created_at}</p>
-           <p><strong>Rating: </strong>{review.rating}</p>
-           <p><strong>Review: </strong>{review.body}</p>
 
-           <button onClick={this.handleUpVote}
-           value={review.id} type="button"
-           className="ml-0 btn btn-sm btn-outline-success">Up Vote
-           </button>
-           <button onClick={this.handleDownVote}
-           value={review.id} type="button"
-           className="btn btn-sm btn-outline-danger">Down Vote
-           </button>
+      let sandwich_rating = (rating) => {
+        let sandwiches = [];
+          for (let i = 0; i < rating; i++) {
+            sandwiches.push(<img src={sandwich_icon} height='30px' width='50px'/>);
+          }
+        return sandwiches;
+      };
+      console.log(sandwich_rating(2));
 
-           <p>Vote Count: {review.vote_count}</p>
-         </div>
-      ));
+      let reviews = this.state.reviewsData.map(review => {
+        let sandwiches = sandwich_rating(review.rating);
+        return (
+          <div key={review.id} className="col-lg-7 ml-xl-4 mb-4">
+             <a href="" className="teal-text"/>
+             <p>from <strong>{review.user.email}</strong>, {review.created_at}</p>
+             <p><strong>Rating: </strong>{sandwiches}</p>
+             <p><strong>Review: </strong>{review.body}</p>
+             <button onClick={this.handleUpVote}
+             value={review.id} type="button"
+             className="ml-0 btn btn-sm btn-outline-success">Up Vote
+             </button>
+             <button onClick={this.handleDownVote}
+             value={review.id} type="button"
+             className="btn btn-sm btn-outline-danger">Down Vote
+             </button>
+
+             <p>Vote Count: {review.vote_count}</p>
+           </div>
+       );
+      });
 
       let alerts = this.state.alerts;
       if (alerts) {
